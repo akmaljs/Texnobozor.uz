@@ -1,0 +1,613 @@
+/* Home page started */
+/* Umumiy uslublar va reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+}
+/* Maxsus konteyner elementini aniqlash */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex; /* Kontentni yonma-yon joylash uchun */
+    justify-content: space-between; /* Elementlarni ikki chetga surish */
+    align-items: center; /* Vertikal o'rtaga joylash */
+}
+
+/* Yuqori satr (Top Bar) uslublari */
+.top-bar {
+    background-color: #343a40; /* To'q kulrang fon */
+    color: #ffffff; /* Oq matn */
+    font-size: 14px;
+    padding: 10px 0;
+}
+
+.top-bar .container {
+    justify-content: space-between;
+}
+
+.contact-info span,
+.email-info span {
+    margin-right: 20px;
+}
+
+.contact-info i,
+.email-info i {
+    margin-right: 5px;
+    color: #ff4757; /* Telefon/Joylashuv belgisiga qizil rang berish (rasmdagi kabi) */
+}
+
+/* Asosiy sarlavha (Bottom Bar) uslublari */
+.bottom-bar {
+    padding: 20px 0;
+    background-color: #ffffff; /* Oq fon */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Yengil soya */
+}
+
+.bottom-bar .container {
+    align-items: center;
+    gap: 30px; /* Elementlar orasidagi masofa */
+}
+
+/* Logo uslubi */
+.logo {
+    background-color: #ff4757; /* Qizil fon */
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 10px 20px;
+    display: block; /* To'liq qizil orqa fon uchun */
+    text-align: center;
+    letter-spacing: 1px;
+    border-radius: 8px;
+}
+
+/* Qidiruv paneli uslubi */
+.search-box {
+    display: flex;
+    flex-grow: 1; /* Qidiruv panelini bo'sh joyni egallashiga ruxsat berish */
+    max-width: 600px; /* Maksimal kenglikni belgilash */
+    border-radius: 5px;
+    overflow: hidden; /* Chegaralarni yashirish */
+}
+
+.search-box input {
+    flex-grow: 1;
+    padding: 12px 15px;
+    border: 1px solid #dee2e6;
+    border-right: none;
+    font-size: 16px;
+    outline: none;
+    background-color: #f8f9fa; /* Och kulrang fon */
+}
+
+.search-box input::placeholder {
+    color: #9a9a9a;
+}
+
+.search-btn {
+    background-color: #ff4757; /* Qizil fon */
+    color: #ffffff;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.2s;
+}
+
+.search-btn:hover {
+    background-color: #e53944; /* Qizil rangning to'qroq tusiga o'tkazish */
+}
+
+/* Savat belgisi uslubi */
+.cart-icon {
+    position: relative;
+    font-size: 28px;
+    cursor: pointer;
+    color: #343a40;
+}
+
+.cart-count {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: #ff4757; /* Qizil fon */
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 3px 6px;
+    min-width: 20px;
+    text-align: center;
+    line-height: 1;
+}
+
+/* Media so'rovlari: kichik ekranlar uchun moslashuvchanlik (ixtiyoriy) */
+@media (max-width: 768px) {
+    .top-bar .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .contact-info {
+        margin-bottom: 5px;
+    }
+    .bottom-bar .container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .logo {
+        margin-bottom: 15px;
+        width: 100%;
+    }
+    .search-box {
+        max-width: 100%;
+        margin-bottom: 15px;
+    }
+}
+/* Navigatsiya Menyusi (Main Nav) uslublari */
+.main-nav {
+    background-color: #ffffff; /* Oq fon */
+    border-bottom: 1px solid #e9ecef; /* Pastki chegara */
+    padding: 10px 0;
+}
+
+.main-nav .container {
+    justify-content: flex-start; /* Chap tomondan boshlash */
+}
+
+.main-nav ul {
+    list-style: none; /* Nuqtalarni olib tashlash */
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.main-nav ul li a {
+    text-decoration: none;
+    color: #495057; /* To'q kulrang matn */
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px 15px;
+    display: block;
+    transition: color 0.2s;
+}
+
+.main-nav ul li a:hover {
+    color: #ff4757; /* Hover effekti: Qizil rang */
+}
+
+/* --- Hero/Banner Qismi (Slayder) uslublari --- */
+/* --- Hero/Banner Qismi (Slayder) uslublari --- */
+.hero-section {
+    position: relative;
+    background-color: #ffffff;
+    padding: 60px 0 80px 0;
+    overflow: hidden;
+    border: none;
+
+    /* Rasmdagi yengil qizil fon effekti */
+    background-image: radial-gradient(circle at 75% 50%, rgba(255, 71, 87, 0.05) 0%, rgba(255, 255, 255, 1) 40% ,  rgba(255, 71, 87, 0.05) 0%, rgba(255, 255, 255, 1) 0%);
+    background-repeat: no-repeat;
+}
+
+
+
+
+.hero-content {
+    flex: 1;
+    padding-right: 20px;
+ 
+    /* transition: opacity 0.6s ease-in-out; qatorini olib tashlang */
+}
+
+/* 1. Kontentni yashirish uchun animatsiya */
+@keyframes fadeOutSlide {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(-20px); /* Chapga surilish effekti */
+    }
+}
+
+/* 2. Kontentni qayta chiqarish uchun animatsiya */
+@keyframes fadeInSlide {
+    from {
+        opacity: 0;
+        transform: translateX(20px); /* O'ngdan kelish effekti */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* JS tomonidan qo'shiladigan klasslar */
+.hero-content.fade-out {
+    animation: fadeOutSlide 0.6s ease-in-out forwards;
+    /* 'forwards' oxirgi holatda (opacity: 0) qolishini ta'minlaydi */
+}
+
+.hero-content.fade-in {
+    animation: fadeInSlide 0.6s ease-in-out;
+}
+
+.main-title {
+    color: #ff4757; /* Qizil rang */
+    font-size: 56px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #343a40;
+    font-size: 30px;
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+
+.description {
+    color: #6c757d;
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+
+/* Katalog tugmasi uslubi */
+.catalog-btn {
+    display: inline-block;
+    background-color: #ff4757; /* Qizil fon */
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 30px;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+}
+
+.catalog-btn:hover {
+    background-color: #e53944;
+}
+
+/* Bo'sh turgan rasm maydoni */
+.hero-image {
+    flex: 1; /* Teng kenglik berish */
+    min-height: 250px;
+    background: radial-gradient(circle, rgba(255, 71, 87, 0.05) 0%, rgba(255, 255, 255, 0) 70%); 
+    /* Rasmning o'rniga yengil qizil gradient qo'yish */
+}
+
+/* Slayder navigatsiya o'qlari */
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 50%;
+    color: #495057;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s;
+}
+
+.slider-arrow:hover {
+    background-color: #ff4757;
+    color: #ffffff;
+    border-color: #ff4757;
+}
+
+.prev-arrow {
+    left: 15px; /* Konteynerning chetiga yaqinroq */
+}
+
+.next-arrow {
+    right: 15px; /* Konteynerning chetiga yaqinroq */
+}
+
+/* Slayder nuqtalari */
+.slider-dots {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background-color: #dee2e6;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.dot.active {
+    background-color: #ff4757; /* Aktiv nuqtani qizil qilish */
+    width: 20px; /* Aktiv nuqtani biroz cho'ziq qilish */
+    border-radius: 4px;
+}
+/* --- Kategoriyalar Bo'limi Uslublari (Qayta ishlanilgan) --- */
+/* style.css faylidagi Kategoriyalar bo'limi uslublari */
+
+.categories-section {
+    padding: 80px 0;
+    background-color: #ffffff;
+    text-align: center; /* <<< Yozuvni markazga joylash uchun muhim */
+}
+
+.section-title {
+    font-size: 32px;
+    font-weight: 500;
+    color: #343a40;
+    margin-bottom: 50px;
+    /* Agar bu markazga kelmasa, unga to'g'ridan-to'g'ri berishimiz mumkin: */
+    /* width: 100%; */ 
+    /* text-align: center; (Asosiy section da bor) */
+}
+
+/* MUHIM: Cardlarni bir qatorda tartibli joylash */
+.category-cards {
+    display: flex; /* Flexbox'ni yoqish */
+    justify-content: center; /* Cardlarni markazga joylash (Gorizontal) */
+    align-items: center;
+    gap: 20px; 
+    flex-wrap: wrap; 
+}
+
+/* Har bir kategoriya kartasi uchun uslub */
+.category-card {
+    display: block;
+    width: 250px;
+    padding: 30px 20px;
+    background-color: #ffffff;
+    border: 1px solid #e9ecef; /* Oddiy holatda yengil kulrang hoshiya */
+    border-radius: 8px;
+    text-decoration: none;
+    text-align: center;
+    
+    /* Hover effektining silliq o'tishi uchun */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Icon maydoni */
+.card-icon {
+    width: 70px; /* Kattaroq icon maydoni */
+    height: 70px;
+    line-height: 70px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    background-color: #f8f9fa; /* Juda yengil kulrang fon */
+    font-size: 30px;
+    color: #495057;
+    transition: background-color 0.3s, color 0.3s; /* Icon rangining silliq o'tishi */
+}
+
+/* Kartadagi sarlavha */
+.card-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: #343a40;
+    margin-bottom: 5px;
+    transition: color 0.3s;
+}
+
+/* Mahsulot soni */
+.card-count {
+    font-size: 14px;
+    color: #6c757d;
+}
+
+/* --- HOVER HOLAT EFFEKTI --- */
+
+/* Karta ustiga sichqoncha olib kelinganda */
+.category-card:hover {
+    border-color: #ff4757; /* Qizil hoshiya */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Yengil soya */
+}
+
+.category-card:hover .card-title {
+    color: #ff4757; /* Matnni qizil qilish */
+}
+
+.category-card:hover .card-icon {
+    background-color: rgba(255, 71, 87, 0.1); /* Yengil qizil fon */
+    color: #ff4757; /* Iconni qizil qilish */
+}
+/* Asosiy uslublar */
+
+/*===================================================================*/
+/* ASOSIY VA SARLAVHA USLUBLARI */
+/*===================================================================*/
+ody {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    box-sizing: borbder-box;
+}
+
+.product-section {
+    max-width: 1200px;  
+    /* margin: 40px auto;  */
+    padding: 20px;
+    background-color: #fff;
+    /* Rasmdagi toza fon va chegara */
+    margin-top: 20px;
+}
+
+.product-section h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+    margin: 0;
+    padding-bottom: 5px;
+    display: inline-block;
+    text-align: center;
+    font-size: 30px;
+}
+
+/* Karusel boshqaruv tugmalarini tartiblash */
+.carousel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.scroll-navigation {
+    margin-left: auto; /* Sarlavhadan uzoqlashtirish */
+    display: flex;
+    gap: 5px;
+}
+
+.nav-btn {
+    background: transparent;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.nav-btn:hover {
+    border-color: #ff0000;
+    color: #ff0000;
+}
+
+/*===================================================================*/
+/* MAHSULOT RO'YXATI (KARUSEL) */
+/*===================================================================*/
+.product-list-wrapper {
+    overflow: hidden; /* Karusel chegarasidan chiqqan kontentni yashirish */
+}
+
+.product-list-container {
+    display: flex; 
+    overflow-x: scroll; /* Gorizontal siljishni yoqish */
+    overflow-y: hidden;
+    gap: 20px; /* 🔥 Rasmdagidek kartochkalar orasidagi aniq bo'shliq */
+    padding-bottom: 20px; 
+    scroll-behavior: smooth; /* Silliq avtomatik o'tish */
+    
+    /* Scrollbarni yashirish */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.product-list-container::-webkit-scrollbar {
+    display: none;
+}
+
+/*===================================================================*/
+/* MAHSULOT KARTOCHKASI (Eng muhim dizayn o'zgarishlari) */
+/*===================================================================*/
+.product-card {
+    /* 🔥 Kenglik: Bu joylashuv 4 ta karta uchun ideal */
+    flex: 0 0 calc(25% - 15px); /* 1200px (umumiy) / 4 karta = 300px. Gap (20px) ni hisobga olgan holda. */
+    max-width: 285px; /* Katta ekranlarda ham karta hajmini cheklash */
+    
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 4px; /* Rasmdagi kabi burchak radiusi */
+    padding: 10px; /* Ichki bo'shliq rasmdagidek kichikroq */
+    text-align: left; /* Matnlar chapga surilgan */
+    transition: box-shadow 0.2s ease;
+    cursor: pointer;
+}
+
+.product-card:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); 
+    border-color: #ddd; /* Hover effektini yumshoqroq qilish */
+}
+
+.product-image {
+    width: 100%;
+    /* 🔥 Rasmdagi kabi to'rtburchak (kvadratga yaqin) rasm maydoni */
+    height: 200px; 
+    object-fit: cover; /* Rasmni to'liq to'ldirish */
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+/* Mahsulot detallari */
+.product-name {
+    font-size: 14px;
+    font-weight: 500;
+    height: 34px; 
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+
+.product-rating {
+    font-size: 13px;
+    color: #f7b307; /* Sariq yulduzcha rangiga o'xshatish */
+    margin-bottom: 5px;
+}
+.product-rating span {
+    color: #999;
+}
+
+.product-price-current {
+    font-size: 18px;
+    color: #ff0000; 
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+/* Savatcha tugmasi - Rasmda u faqat "Savatga qo'shish" tugmasi ko'rinishida */
+.product-actions {
+    display: flex;
+    justify-content: center; /* Markazga tortish */
+    align-items: center;
+}
+
+.add-to-cart-btn {
+    background-color: #ff0000; 
+    color: white;
+    border: none;
+    padding: 8px 0; /* Balandlikni rasmdagidek kamaytirish */
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s;
+    flex-grow: 1; /* Butun kenglikni egallash */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.add-to-cart-btn i {
+    margin-right: 5px;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #cc0000;
+}
+
+/* Rasmda boshqa ikonlar yo'q, shuning uchun action-icon uslublari o'chirildi */
+/* homepage ended */

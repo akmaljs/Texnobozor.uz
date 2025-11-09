@@ -1,11 +1,150 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uz">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>TEXNOBOZOR Header</title>
+    <link rel="shortcut icon" href="./images/5436048838948418186__1_-removebg-preview.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+
+    <header class="main-header">
+        
+        <div class="top-bar">
+            <div class="container">
+                <div class="contact-info">
+                    <span><i class="fas fa-phone"></i> +998-62-227-77-79</span>
+                    <span><i class="fas fa-map-marker-alt"></i> Xorazm, Oʻzbekiston</span>
+                </div>
+                <div class="email-info">
+                    <span>Pochta buyurtmasi: info@texnobozor.uz</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom-bar">
+            <div class="container">
+                
+                <a href="#" class="logo">TEXNOBOZOR</a>
+                
+                <div class="search-box">
+                    <input type="text" placeholder="Mahsulotlarni qidiring...">
+                    <button type="submit" class="search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+
+                <div class="cart-icon">
+                    <span class="cart-count">0</span>
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+            </div>
+        </div>
+
+    </header>
+    <nav class="main-nav">
+    <div class="container">
+        <ul>
+            <li><a href="#">Asosiy</a></li>
+            <li><a href="#">Mahsulotlar</a></li>
+            <li><a href="#">Smartfonlar</a></li>
+            <li><a href="#">Gajetlar</a></li>
+            <li><a href="#">Maishiy texnika</a></li>
+            <li><a href="#">Aksessuarlar</a></li>
+            <li><a href="#">Filiallar</a></li>
+            <li><a href="#">Aloqa</a></li>
+        </ul>
+    </div>
+</nav>
+
+<section class="hero-section">
+    <div class="container">
+        
+        <div class="hero-content">
+            <h1 class="main-title">Maishiy texnika</h1>
+            <p class="subtitle">Uyingizni modernlashtiring</p>
+            <p class="description">Premium sifat, qulay narxlar</p>
+            
+            <a href="#" class="catalog-btn">Katalogʻni koʻrish</a>
+        </div>
+        
+        <div class="hero-image">
+            </div>
+
+        <button class="slider-arrow prev-arrow"><</button>
+        <button class="slider-arrow next-arrow">></button>
+    </div>
+
+    <div class="slider-dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+</section>
+<section class="categories-section">
+        <div class="categories_top">
+ <h2 class="section-title">Kategoriyalar</h2>   
+        </div>
+       
+        
+        <div class="category-cards">
+            
+            <a href="#" class="category-card">
+                <div class="card-icon">
+                    <i class="fas fa-mobile-alt"></i> 
+                </div>
+                <div class="card-title">Smartfonlar</div>
+                <div class="card-count">500+ mahsulot</div>
+            </a>
+
+            <a href="#" class="category-card">
+                <div class="card-icon">
+                    <i class="fa-solid fa-swatchbook"></i></i> 
+                </div>
+                <div class="card-title">Gajetlar</div>
+                <div class="card-count">300+ mahsulot</div>
+            </a>
+
+            <a href="#" class="category-card">
+                <div class="card-icon">
+                    <i class="fas fa-home"></i> 
+                </div>
+                <div class="card-title">Maishiy texnika</div>
+                <div class="card-count">200+ mahsulot</div>
+            </a>
+
+            <a href="#" class="category-card">
+                <div class="card-icon">
+                    <i class="fas fa-headphones-alt"></i> 
+                </div>
+                <div class="card-title">Aksessuarlar</div>
+                <div class="card-count">400+ mahsulot</div>
+            </a>
+            
+    </div>
+</section>
+<div class="container">
+
+    <div class="product-section">
+        <h2>Mashhur mahsulotlar</h2>
+        <div class="carousel-header">
+            <div class="scroll-navigation">
+                <button class="nav-btn prev-btn" id="prevBtn"><i class="fas fa-angle-left"></i></button>
+                <button class="nav-btn next-btn" id="nextBtn"><i class="fas fa-angle-right"></i></button>
+            </div>
+        </div>
+
+        <div class="product-list-wrapper">
+            <div class="product-list-container" id="productListContainer">
+                </div>
+        </div>
+    </div>
+</div>
+
     
+    <script src="./js/main.js"></script>
 </body>
 </html>
