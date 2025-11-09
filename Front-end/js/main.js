@@ -392,4 +392,66 @@ productListContainer.addEventListener('mouseleave', () => {
 
 // Sahifa yuklanganda mahsulotlarni joylash
 document.addEventListener('DOMContentLoaded', renderProducts);
+document.addEventListener('DOMContentLoaded', () => {
+
+    // Barcha taymer qismlarini topish
+    const timers = document.querySelectorAll('.countdown-timer');
+
+    /**
+     * Kunlik 24 soatlik tsiklda (ertangi kun 00:00:00 gacha) qolgan vaqtni hisoblaydi.
+     */
+    function getTimeRemainingForDailyCycle() {
+        const now = new Date();
+        
+        // Ertangi kunning 00:00:00 vaqtini belgilash
+        const tomorrow = new Date(now);
+        tomorrow.setDate(now.getDate() + 1); 
+        tomorrow.setHours(0, 0, 0, 0);       
+
+        // Jami qolgan millisekundlar
+        const total = tomorrow - now;
+
+        if (total < 0) return { hours: 0, minutes: 0, seconds: 0 };
+
+        const seconds = Math.floor((total / 1000) % 60);
+        const minutes = Math.floor((total / 1000 / 60) % 60);
+        const hours = Math.floor(total / (1000 * 60 * 60)); 
+
+        return {
+            hours,
+            minutes,
+            seconds
+        };
+    }
+
+    /**
+     * Har bir taymerni yangilash funksiyasi.
+     */
+    function updateAllTimers() {
+        const t = getTimeRemainingForDailyCycle();
+
+        // Qiymatlarni ikki xonali qilib formatlash
+        const hours = ('0' + t.hours).slice(-2);
+        const minutes = ('0' + t.minutes).slice(-2);
+        const seconds = ('0' + t.seconds).slice(-2);
+
+        // Har bir taymer elementini yangilash
+        timers.forEach(timerElement => {
+            const timeValues = timerElement.querySelectorAll('.time-value');
+            
+            if (timeValues.length >= 3) {
+                timeValues[0].textContent = hours;
+                timeValues[1].textContent = minutes;
+                timeValues[2].textContent = seconds;
+            }
+        });
+    }
+
+    // --- Ishga tushirish mantiqi ---
+    updateAllTimers();
+    
+    // Har bir soniyada yangilash
+    setInterval(updateAllTimers, 1000);
+
+});
 // home page ended
